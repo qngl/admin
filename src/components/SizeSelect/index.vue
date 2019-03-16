@@ -1,12 +1,33 @@
 <template>
-  <el-dropdown trigger="click" @command="handleSetSize">
+  <el-dropdown
+    trigger="click"
+    @command="handleSetSize"
+  >
     <div>
-      <svg-icon class-name="size-icon" icon-class="size" />
+      <svg-icon
+        class-name="size-icon"
+        icon-class="size"
+      />
     </div>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item :disabled="size==='medium'" command="medium">Medium</el-dropdown-item>
-      <el-dropdown-item :disabled="size==='small'" command="small">Small</el-dropdown-item>
-      <el-dropdown-item :disabled="size==='mini'" command="mini">Mini</el-dropdown-item>
+      <el-dropdown-item
+        :disabled="size==='medium'"
+        command="medium"
+      >
+        Medium
+      </el-dropdown-item>
+      <el-dropdown-item
+        :disabled="size==='small'"
+        command="small"
+      >
+        Small
+      </el-dropdown-item>
+      <el-dropdown-item
+        :disabled="size==='mini'"
+        command="mini"
+      >
+        Mini
+      </el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>
@@ -46,7 +67,7 @@ export default {
 .size-icon {
   font-size: 1.25rem;
   cursor: pointer;
-  vertical-align: -4px!important;
+  vertical-align: -4px !important;
 }
 </style>
 

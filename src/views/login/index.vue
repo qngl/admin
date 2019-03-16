@@ -1,11 +1,18 @@
 <template>
   <div class="login-container">
-
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-
+    <el-form
+      ref="loginForm"
+      :model="loginForm"
+      :rules="loginRules"
+      class="login-form"
+      auto-complete="on"
+      label-position="left"
+    >
       <div class="title-container">
-        <h3 class="title">{{ $t('login.title') }}</h3>
-        <lang-select class="set-language"/>
+        <h3 class="title">
+          {{ $t('login.title') }}
+        </h3>
+        <lang-select class="set-language" />
       </div>
 
       <el-form-item prop="username">
@@ -26,19 +33,29 @@
           <svg-icon icon-class="password" />
         </span>
         <el-input
-          :type="passwordType"
           v-model="loginForm.password"
+          :type="passwordType"
           :placeholder="$t('login.password')"
           name="password"
           auto-complete="on"
-          @keyup.enter.native="handleLogin" />
-        <span class="show-pwd" @click="showPwd">
+          @keyup.enter.native="handleLogin"
+        />
+        <span
+          class="show-pwd"
+          @click="showPwd"
+        >
           <svg-icon icon-class="eye" />
         </span>
       </el-form-item>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">{{ $t('login.logIn') }}</el-button>
-
+      <el-button
+        :loading="loading"
+        type="primary"
+        style="width:100%; margin-bottom:30px;"
+        @click.native.prevent="handleLogin"
+      >
+        {{ $t('login.logIn') }}
+      </el-button>
     </el-form>
   </div>
 </template>
@@ -46,11 +63,10 @@
 <script>
 import { isvalidUsername } from '@/utils/validate'
 import LangSelect from '@/components/LangSelect'
-import SocialSign from './socialsignin'
 
 export default {
   name: 'Login',
-  components: { LangSelect, SocialSign },
+  components: { LangSelect },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!isvalidUsername(value)) {
@@ -115,7 +131,6 @@ export default {
             this.loading = false
           })
         } else {
-          console.log('error submit!!')
           return false
         }
       })
@@ -126,6 +141,7 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss">
   /* 修复input 背景不协调 和光标变色 */
+
   /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
   $bg:#283443;
@@ -133,9 +149,10 @@ export default {
   $cursor: #fff;
 
   @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
-    .login-container .el-input input{
+    .login-container .el-input input {
       color: $cursor;
-      &::first-line {
+
+      &:first-line {
         color: $light_gray;
       }
     }
@@ -147,21 +164,24 @@ export default {
       display: inline-block;
       height: 47px;
       width: 85%;
+
       input {
         background: transparent;
-        border: 0px;
+        border: 0;
         -webkit-appearance: none;
-        border-radius: 0px;
+        border-radius: 0;
         padding: 0.75rem 5px 0.75rem 15px;
         color: $light_gray;
         height: 47px;
         caret-color: $cursor;
+
         &:-webkit-autofill {
-          -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
+          -webkit-box-shadow: 0 0 0 1000px $bg inset !important;
           -webkit-text-fill-color: $cursor !important;
         }
       }
     }
+
     .el-form-item {
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: rgba(0, 0, 0, 0.1);
@@ -181,6 +201,7 @@ $light_gray:#eee;
   height: 100%;
   width: 100%;
   background-color: $bg;
+
   .login-form {
     position: absolute;
     left: 0;
@@ -190,6 +211,7 @@ $light_gray:#eee;
     padding: 35px 35px 15px 35px;
     margin: 11.25rem auto;
   }
+
   .svg-container {
     padding: 6px 5px 6px 15px;
     color: $dark_gray;
@@ -197,22 +219,26 @@ $light_gray:#eee;
     width: 30px;
     display: inline-block;
   }
+
   .title-container {
     position: relative;
+
     .title {
       font-size: 26px;
       color: $light_gray;
-      margin: 0px auto 40px auto;
+      margin: 0 auto 40px auto;
       text-align: center;
       font-weight: bold;
     }
+
     .set-language {
       color: #fff;
       position: absolute;
       top: 5px;
-      right: 0px;
+      right: 0;
     }
   }
+
   .show-pwd {
     position: absolute;
     right: 10px;

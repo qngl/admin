@@ -19,7 +19,7 @@ export default function checkPermission(value) {
     }
     return true
   } else {
-    console.error(`need roles! Like v-permission="['SystemAdmin', 'RetailAdmin', 'RetailUser', 'FinancialLeasingAdmin', 'FinancialLeasingUser']"`)
+    // need roles! Like v-permission="['SystemAdmin', 'RetailAdmin', 'RetailUser', 'FinancialLeasingAdmin', 'FinancialLeasingUser']"
     return false
   }
 }

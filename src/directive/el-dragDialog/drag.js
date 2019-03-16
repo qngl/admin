@@ -1,4 +1,4 @@
-export default{
+export default {
   bind(el, binding, vnode) {
     const dialogHeaderEl = el.querySelector('.el-dialog__header')
     const dragDom = el.querySelector('.el-dialog')
@@ -36,8 +36,8 @@ export default{
       let styT = getStyle(dragDom, 'top')
 
       if (styL.includes('%')) {
-        styL = +document.body.clientWidth * (+styL.replace(/\%/g, '') / 100)
-        styT = +document.body.clientHeight * (+styT.replace(/\%/g, '') / 100)
+        styL = +document.body.clientWidth * (+styL.replace(/%/g, '') / 100)
+        styT = +document.body.clientHeight * (+styT.replace(/%/g, '') / 100)
       } else {
         styL = +styL.replace(/\px/g, '')
         styT = +styT.replace(/\px/g, '')

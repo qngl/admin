@@ -1,0 +1,10 @@
+*.html
+*.ejs
+dist
+build
+node_modules
+cordova
+coverage
+api_stub
+3rd
+pdf.worker.min.js

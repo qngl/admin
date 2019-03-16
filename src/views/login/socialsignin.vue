@@ -1,10 +1,22 @@
 <template>
   <div class="social-signup-container">
-    <div class="sign-btn" @click="wechatHandleClick('wechat')">
-      <span class="wx-svg-container"><svg-icon icon-class="wechat" class="icon"/></span> 微信
+    <div
+      class="sign-btn"
+      @click="wechatHandleClick('wechat')"
+    >
+      <span class="wx-svg-container"><svg-icon
+        icon-class="wechat"
+        class="icon"
+      /></span> 微信
     </div>
-    <div class="sign-btn" @click="tencentHandleClick('tencent')">
-      <span class="qq-svg-container"><svg-icon icon-class="qq" class="icon"/></span> QQ
+    <div
+      class="sign-btn"
+      @click="tencentHandleClick('tencent')"
+    >
+      <span class="qq-svg-container"><svg-icon
+        icon-class="qq"
+        class="icon"
+      /></span> QQ
     </div>
   </div>
 </template>
@@ -38,15 +50,18 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
   .social-signup-container {
     margin: 1.25rem 0;
+
     .sign-btn {
       display: inline-block;
       cursor: pointer;
     }
+
     .icon {
       color: #fff;
       font-size: 24px;
       margin-top: 0.5rem;
     }
+
     .wx-svg-container,
     .qq-svg-container {
       display: inline-block;
@@ -59,11 +74,13 @@ export default {
       margin-bottom: 1.25rem;
       margin-right: 5px;
     }
+
     .wx-svg-container {
       background-color: #8ada53;
     }
+
     .qq-svg-container {
-      background-color: #6BA2D6;
+      background-color: #6ba2d6;
       margin-left: 50px;
     }
   }

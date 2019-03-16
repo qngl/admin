@@ -1,17 +1,24 @@
 <template>
   <div class="dashboard-role-container">
-
-    <panel-group @handleGetProposals="handleGetProposals"/>
+    <panel-group @handleGetProposals="handleGetProposals" />
 
     <el-row :gutter="24">
-      <el-col :xs="24" :sm="24" :lg="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :lg="12"
+      >
         <div class="chart-wrapper">
-          <pie-chart/>
+          <pie-chart />
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :lg="12"
+      >
         <div class="chart-wrapper">
-          <bar-chart/>
+          <bar-chart />
         </div>
       </el-col>
     </el-row>
@@ -19,11 +26,10 @@
     <el-row>
       <el-col>
         <div class="chart-wrapper">
-          <line-chart :chart-data="lineChartData"/>
+          <line-chart :chart-data="lineChartData" />
         </div>
       </el-col>
     </el-row>
-
   </div>
 </template>
 
@@ -66,6 +72,7 @@ export default {
 .dashboard-role-container {
   padding: 1rem;
   background-color: rgb(240, 242, 245);
+
   .chart-wrapper {
     background: #fff;
     padding: 1rem 1rem 0;

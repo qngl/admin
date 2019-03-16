@@ -1,11 +1,17 @@
 <template>
-  <div :style="{zIndex:zIndex,height:height,width:width}" class="pan-item">
+  <div
+    :style="{zIndex:zIndex,height:height,width:width}"
+    class="pan-item"
+  >
     <div class="pan-info">
       <div class="pan-info-roles-container">
-        <slot/>
+        <slot />
       </div>
     </div>
-    <img :src="image" class="pan-thumb">
+    <img
+      :src="image"
+      class="pan-thumb"
+    >
   </div>
 </template>
 
@@ -135,6 +141,6 @@ export default {
 
 .pan-item:hover .pan-info p a {
   opacity: 1;
-  transform: translateX(0px) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
 }
 </style>

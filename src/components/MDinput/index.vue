@@ -1,12 +1,19 @@
 <template>
-  <div :class="computedClasses" class="material-input__component">
+  <div
+    :class="computedClasses"
+    class="material-input__component"
+  >
     <div :class="{iconClass:icon}">
-      <i v-if="icon" :class="['el-icon-' + icon]" class="el-input__icon material-input__icon"/>
+      <i
+        v-if="icon"
+        :class="['el-icon-' + icon]"
+        class="el-input__icon material-input__icon"
+      />
       <input
         v-if="type === 'email'"
+        v-model="currentValue"
         :name="name"
         :placeholder="fillPlaceHolder"
-        v-model="currentValue"
         :readonly="readonly"
         :disabled="disabled"
         :autoComplete="autoComplete"
@@ -15,12 +22,13 @@
         class="material-input"
         @focus="handleMdFocus"
         @blur="handleMdBlur"
-        @input="handleModelInput">
+        @input="handleModelInput"
+      >
       <input
         v-if="type === 'url'"
+        v-model="currentValue"
         :name="name"
         :placeholder="fillPlaceHolder"
-        v-model="currentValue"
         :readonly="readonly"
         :disabled="disabled"
         :autoComplete="autoComplete"
@@ -29,12 +37,13 @@
         class="material-input"
         @focus="handleMdFocus"
         @blur="handleMdBlur"
-        @input="handleModelInput">
+        @input="handleModelInput"
+      >
       <input
         v-if="type === 'number'"
+        v-model="currentValue"
         :name="name"
         :placeholder="fillPlaceHolder"
-        v-model="currentValue"
         :step="step"
         :readonly="readonly"
         :disabled="disabled"
@@ -48,12 +57,13 @@
         class="material-input"
         @focus="handleMdFocus"
         @blur="handleMdBlur"
-        @input="handleModelInput">
+        @input="handleModelInput"
+      >
       <input
         v-if="type === 'password'"
+        v-model="currentValue"
         :name="name"
         :placeholder="fillPlaceHolder"
-        v-model="currentValue"
         :readonly="readonly"
         :disabled="disabled"
         :autoComplete="autoComplete"
@@ -64,12 +74,13 @@
         class="material-input"
         @focus="handleMdFocus"
         @blur="handleMdBlur"
-        @input="handleModelInput">
+        @input="handleModelInput"
+      >
       <input
         v-if="type === 'tel'"
+        v-model="currentValue"
         :name="name"
         :placeholder="fillPlaceHolder"
-        v-model="currentValue"
         :readonly="readonly"
         :disabled="disabled"
         :autoComplete="autoComplete"
@@ -78,12 +89,13 @@
         class="material-input"
         @focus="handleMdFocus"
         @blur="handleMdBlur"
-        @input="handleModelInput">
+        @input="handleModelInput"
+      >
       <input
         v-if="type === 'text'"
+        v-model="currentValue"
         :name="name"
         :placeholder="fillPlaceHolder"
-        v-model="currentValue"
         :readonly="readonly"
         :disabled="disabled"
         :autoComplete="autoComplete"
@@ -94,10 +106,11 @@
         class="material-input"
         @focus="handleMdFocus"
         @blur="handleMdBlur"
-        @input="handleModelInput">
-      <span class="material-input-bar"/>
+        @input="handleModelInput"
+      >
+      <span class="material-input-bar" />
       <label class="material-label">
-        <slot/>
+        <slot />
       </label>
     </div>
   </div>
@@ -202,14 +215,14 @@ export default {
   // Utils
   $spacer: 12px;
   $transition: 0.2s ease all;
-  $index: 0px;
+  $index: 0;
   $index-has-icon: 30px;
   // Theme:
   $color-white: white;
-  $color-grey: #9E9E9E;
-  $color-grey-light: #E0E0E0;
-  $color-blue: #2196F3;
-  $color-red: #F44336;
+  $color-grey: #9e9e9e;
+  $color-grey-light: #e0e0e0;
+  $color-blue: #2196f3;
+  $color-red: #f44336;
   $color-black: black;
   // Base clases:
   %base-bar-pseudo {
@@ -233,9 +246,11 @@ export default {
   .material-input__component {
     margin-top: 36px;
     position: relative;
+
     * {
       box-sizing: border-box;
     }
+
     .iconClass {
       .material-input__icon {
         position: absolute;
@@ -249,13 +264,16 @@ export default {
         font-weight: $font-weight-normal;
         pointer-events: none;
       }
+
       .material-label {
         left: $index-has-icon;
       }
+
       .material-input {
         text-indent: $index-has-icon;
       }
     }
+
     .material-input {
       font-size: $font-size-base;
       padding: $spacer $spacer $spacer - $apixel * 10 $spacer / 2;
@@ -264,12 +282,14 @@ export default {
       border: none;
       line-height: 1;
       border-radius: 0;
+
       &:focus {
         outline: none;
         border: none;
         border-bottom: 1px solid transparent; // fixes the height issue
       }
     }
+
     .material-label {
       font-weight: $font-weight-normal;
       position: absolute;
@@ -279,16 +299,21 @@ export default {
       transition: $transition;
       font-size: $font-size-small;
     }
+
     .material-input-bar {
       position: relative;
       display: block;
       width: 100%;
+
       &:before {
         @extend %base-bar-pseudo;
+
         left: 50%;
       }
+
       &:after {
         @extend %base-bar-pseudo;
+
         right: 50%;
       }
     }
@@ -317,15 +342,18 @@ export default {
 
   .material-input__component {
     background: $color-white;
+
     .material-input {
       background: none;
       color: $color-black;
       text-indent: $index;
       border-bottom: 1px solid $color-grey-light;
     }
+
     .material-label {
       color: $color-grey;
     }
+
     .material-input-bar {
       &:before,
       &:after {
@@ -343,6 +371,7 @@ export default {
       &.material--active .material-label {
         color: $color-red;
       }
+
       .material-input-bar {
         &:before,
         &:after {

@@ -1,6 +1,9 @@
 <template>
-  <div :style="{height:height+'px',zIndex:zIndex}" class="simplemde-container">
-    <textarea :id="id"/>
+  <div
+    :style="{height:height+'px',zIndex:zIndex}"
+    class="simplemde-container"
+  >
+    <textarea :id="id" />
   </div>
 </template>
 
@@ -87,35 +90,36 @@ export default {
 </script>
 
 <style scoped>
-.simplemde-container>>>.CodeMirror {
+.simplemde-container >>> .CodeMirror {
   min-height: 150px;
   line-height: 1.25rem;
 }
 
-.simplemde-container>>>.CodeMirror-scroll {
+.simplemde-container >>> .CodeMirror-scroll {
   min-height: 150px;
 }
 
-.simplemde-container>>>.CodeMirror-code {
+.simplemde-container >>> .CodeMirror-code {
   padding-bottom: 40px;
 }
 
-.simplemde-container>>>.editor-statusbar {
+.simplemde-container >>> .editor-statusbar {
   display: none;
 }
 
-.simplemde-container>>>.CodeMirror .CodeMirror-code .cm-link {
+.simplemde-container >>> .CodeMirror .CodeMirror-code .cm-link {
   color: #1890ff;
 }
 
-.simplemde-container>>>.CodeMirror .CodeMirror-code .cm-string.cm-url {
+.simplemde-container >>> .CodeMirror .CodeMirror-code .cm-string.cm-url {
   color: #2d3b4d;
 }
 
-.simplemde-container>>>.CodeMirror .CodeMirror-code .cm-formatting-link-string.cm-url {
+.simplemde-container >>> .CodeMirror .CodeMirror-code .cm-formatting-link-string.cm-url {
   padding: 0 2px;
-  color: #E61E1E;
+  color: #e61e1e;
 }
+
 .simplemde-container >>> .editor-toolbar.fullscreen,
 .simplemde-container >>> .CodeMirror-fullscreen {
   z-index: 1003;

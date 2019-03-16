@@ -1,0 +1,11 @@
+*.js
+*.png
+*.jpg
+*.eot
+*.ttf
+*.woff
+*.woff2
+build/
+dist/
+src/assets
+static

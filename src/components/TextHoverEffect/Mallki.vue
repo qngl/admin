@@ -1,8 +1,12 @@
 <template>
-  <a :class="className" class="link--mallki" href="#">
+  <a
+    :class="className"
+    class="link--mallki"
+    href="#"
+  >
     {{ text }}
-    <span :data-letters="text"/>
-    <span :data-letters="text"/>
+    <span :data-letters="text" />
+    <span :data-letters="text" />
   </a>
 </template>
 
@@ -44,7 +48,7 @@ export default {
   color: transparent;
 }
 
-.link--mallki::before {
+.link--mallki:before {
   content: '';
   width: 100%;
   height: 6px;
@@ -61,7 +65,7 @@ export default {
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-.link--mallki:hover::before {
+.link--mallki:hover:before {
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
@@ -75,7 +79,7 @@ export default {
   overflow: hidden;
 }
 
-.link--mallki span::before {
+.link--mallki span:before {
   content: attr(data-letters);
   color: red;
   position: absolute;
@@ -90,19 +94,19 @@ export default {
   top: 50%;
 }
 
-.link--mallki span:first-child::before {
+.link--mallki span:first-child:before {
   top: 0;
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
 
-.link--mallki span:nth-child(2)::before {
+.link--mallki span:nth-child(2):before {
   bottom: 0;
   -webkit-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0);
 }
 
-.link--mallki:hover span::before {
+.link--mallki:hover span:before {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
   -webkit-transform: translate3d(0, 0, 0);

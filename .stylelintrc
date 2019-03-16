@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "no-empty-source": null,
+    "selector-pseudo-element-colon-notation": "single",
+    "selector-class-pattern": "^([a-z-_]+[0-9]*)*$",
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true
+  }
+}

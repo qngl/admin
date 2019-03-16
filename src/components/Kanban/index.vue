@@ -6,8 +6,13 @@
     <draggable
       :list="list"
       :options="options"
-      class="board-column-content">
-      <div v-for="element in list" :key="element.id" class="board-item">
+      class="board-column-content"
+    >
+      <div
+        v-for="element in list"
+        :key="element.id"
+        class="board-item"
+      >
         {{ element.name }} {{ element.id }}
       </div>
     </draggable>
@@ -81,7 +86,7 @@ export default {
       line-height: 54px;
       padding: 5px 10px;
       box-sizing: border-box;
-      box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
     }
   }
 }

@@ -1,8 +1,18 @@
 <template>
-  <div :class="{fullscreen:fullscreen}" class="tinymce-container editor-container">
-    <textarea :id="tinymceId" class="tinymce-textarea"/>
+  <div
+    :class="{fullscreen:fullscreen}"
+    class="tinymce-container editor-container"
+  >
+    <textarea
+      :id="tinymceId"
+      class="tinymce-textarea"
+    />
     <div class="editor-custom-btn-container">
-      <editorImage color="#1890ff" class="editor-upload-btn" @successCBK="imageSuccessCBK"/>
+      <editorImage
+        color="#1890ff"
+        class="editor-upload-btn"
+        @successCBK="imageSuccessCBK"
+      />
     </div>
   </div>
 </template>
@@ -151,7 +161,6 @@ export default {
         //     })
         //   }).catch(err => {
         //     failure('出现未知问题，刷新页面，或者联系程序员')
-        //     console.log(err);
         //   });
         // },
       })
@@ -181,23 +190,29 @@ export default {
 .tinymce-container {
   position: relative;
 }
-.tinymce-container>>>.mce-fullscreen {
+
+.tinymce-container >>> .mce-fullscreen {
   z-index: 10000;
 }
+
 .tinymce-textarea {
   visibility: hidden;
   z-index: -1;
 }
+
 .editor-custom-btn-container {
   position: absolute;
   right: 0.25rem;
   top: 0.25rem;
-  /*z-index: 2005;*/
+
+  /* z-index: 2005; */
 }
+
 .fullscreen .editor-custom-btn-container {
   z-index: 10000;
   position: fixed;
 }
+
 .editor-upload-btn {
   display: inline-block;
 }
