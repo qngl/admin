@@ -1,17 +1,32 @@
 {
   "presets": [
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+    [
+      "env",
+
+      {
+        "modules": false,
+        "targets": "> 0.25% in CN, last 10 versions, not ie <= 9",
+        "useBuiltIns": "entry",
+        "debug": false
       }
-    }],
+    ],
     "stage-2"
   ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"],
+  "plugins": [
+    "transform-vue-jsx",
+    "transform-runtime"
+  ],
   "env": {
     "development":{
       "plugins": ["dynamic-import-node"]
+    },
+    "test": {
+      "plugins": ["transform-vue-jsx", "transform-runtime", "dynamic-import-webpack"],
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ],
+      "sourceMaps": "inline",
+      "retainLines": true
     }
   }
 }
