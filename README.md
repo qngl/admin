@@ -4,6 +4,8 @@ It is a front-end management background integration solution. It based on [vue](
 
 It is a magical vue admin based on the newest development stack of vue, built-in i18n solution, typical templates for enterprise applications, lots of awesome features. It helps you build a large complex Single-Page Applications. I believe whatever your needs are, this project will help you.
 
+By default, the eslint, stylelint and prettier check are enabled for each commit with husky's support. Unit tests will be run for each push action.
+
 
 ## Getting started
 
