@@ -1,8 +1,8 @@
 ## Introduction
 
-It is a front-end management background integration solution. It based on [vue](https://github.com/vuejs/vue) and use the UI Toolkit [elementUI](https://github.com/ElemeFE/element).
+It is a front-end SPA solution for management purpose. It's based on [vue](https://github.com/vuejs/vue) and the UI Library [elementUI](https://github.com/ElemeFE/element).
 
-It is a magical vue admin based on the newest development stack of vue, built-in i18n solution, typical templates for enterprise applications, lots of awesome features. It helps you build a large complex Single-Page Applications. I believe whatever your needs are, this project will help you.
+It is built with webpack v4 and node v8. vuex, vue-router, vue-i18n, font-awesome are used.
 
 By default, the eslint, stylelint and prettier check are enabled for each commit with husky's support. Unit tests will be run for each push action.
 
